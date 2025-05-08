@@ -1,0 +1,46 @@
+---
+import Btn from "../components/ui/Btn.astro";
+const features = [
+  {
+    img: "/images/icon-communities.svg",
+    title: "1.4k+",
+    description: "Communities Formed",
+  },
+  {
+    img: "/images/icon-messages.svg",
+    title: "2.7m+",
+    description: " Messages Sent",
+  },
+];
+---
+
+<header class=" max-w-[1440px] mx-auto min-w-[375px] mt-12 p-6 md:py-12 md:px-10 text-center text-Very-Dark-Cyan">
+
+  <h1 class="text-2xl font-poppins mb-8 sm:text-3xl">
+    Build The Community Your Fans Will Love
+  </h1>
+
+  <p class=" mb-12 text-balance text-sm sm:w-100 mx-auto">
+    Huddle re-imagines the way we build communities. You have a voice, but so
+    does your audience. Create connections with your users as you engage in
+    genuine discussion.
+  </p>
+
+  <Btn nameButton="Get Started For Free" />
+
+  <img class="mt-30 sm:w-160 mx-auto" src="/images/screen-mockups.svg" alt="" />
+
+  <div
+    class="flex flex-col items-center gap-16 sm:flex-row sm:justify-around sm:mx-auto sm:w-140 mt-18"
+  >
+    {
+      features.map((f) => (
+        <div class="space-y-2 w-50">
+          <img class="w-8 ml-5" src={f.img} alt={f.description} />
+          <h2 class="text-6xl font-bold">{f.title}</h2>
+          <p class="text-sm text-slate-400">{f.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</header>
